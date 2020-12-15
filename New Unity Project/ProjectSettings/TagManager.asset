@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - bala0
+  - bala1
+  - bala2
+  - bala3
+  - bala4
+  - bala5
+  - municao
   layers:
   - Default
   - TransparentFX
