@@ -224,9 +224,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 1929918607}
   novoValor: 0
-  municao: {fileID: 1760497434}
   Mun: {fileID: 1760497434}
   ItemBala: {fileID: 5493211756028769272, guid: b0491af4441c2f24181e64ec99c51545,
+    type: 3}
+  ItemBalaVazia: {fileID: 3022423978350595115, guid: b19b99c27ca06df4eaf8250fe0a9dd23,
     type: 3}
   cursorTexture: {fileID: 0}
   cursorMode: 0
@@ -539,6 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c705bf7e6394fd43b86dae919d948f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carregar: 0
 --- !u!1 &1929918605
 GameObject:
   m_ObjectHideFlags: 0

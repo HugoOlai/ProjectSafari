@@ -10,11 +10,14 @@ public class CursorScript : MonoBehaviour
     public int novoValor = 0;
     public GameObject Mun;
     private GameObject NovaBala;
+    private GameObject NovaEspacoBala;
 
     //munição
     public GameObject ItemBala;
+    public GameObject ItemBalaVazia;
 
     private List<GameObject> ListaBalas;
+    private List<GameObject> ListaBalasVazia;
 
     public Texture2D cursorTexture;
     public CursorMode cursorMode = CursorMode.Auto;
@@ -24,6 +27,8 @@ public class CursorScript : MonoBehaviour
     void Start()
     {
         ListaBalas = new List<GameObject>();
+        ListaBalasVazia = new List<GameObject>();
+        
         Inicio();
     }
 
@@ -67,14 +72,26 @@ public class CursorScript : MonoBehaviour
         return NovaBala;
     }
 
+    GameObject criaSlot(Vector2 posicao)
+    {
+        GameObject NovaBala;
+        NovaBala = Instantiate(ItemBalaVazia);
+        NovaBala.transform.position = posicao;
+        return NovaBala;
+    }
+
     void Inicio()
     {
         float v = 0f;
         for(int i=0; i<=5; i++)
         {
-            NovaBala = criaMunicao(new Vector2(ItemBala.transform.position.x + v, ItemBala.transform.position.y));
-            
+            NovaEspacoBala = criaSlot(new Vector2(ItemBalaVazia.transform.position.x + v, ItemBalaVazia.transform.position.y));
+            ListaBalasVazia.Add(NovaEspacoBala);
+
+            NovaBala = criaMunicao(new Vector2(ItemBala.transform.position.x + v, ItemBala.transform.position.y));            
             ListaBalas.Add(NovaBala);
+
+            
 
             switch (i) {
                 case 0:
